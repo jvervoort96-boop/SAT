@@ -50,7 +50,7 @@ class PWM:
         self._automatic_duty_cycle: bool = automatic_duty_cycle
 
         # Timing thresholds for duty cycle management
-        self._on_time_lower_threshold: float = 180
+        self._on_time_lower_threshold: float = 360
         self._on_time_upper_threshold: float = 3600 / max(1, self._cycles.maximum_count)
         self._on_time_max_threshold: float = self._on_time_upper_threshold * 2
 
