@@ -696,6 +696,8 @@ class SatOptionsFlowHandler(config_entries.OptionsFlow):
         if options.get(CONF_HEATING_SYSTEM) == HEATING_SYSTEM_RADIATORS:
             schema[vol.Required(CONF_CYCLES_PER_HOUR, default=str(options[CONF_CYCLES_PER_HOUR]))] = selector.SelectSelector(
                 selector.SelectSelectorConfig(mode=SelectSelectorMode.DROPDOWN, options=[
+                    selector.SelectOptionDict(value="1", label="Ultra slow (1x per hour)"),
+                    selector.SelectOptionDict(value="2", label="Slow (2x per hour)"),
                     selector.SelectOptionDict(value="3", label="Normal (3x per hour)"),
                     selector.SelectOptionDict(value="4", label="High (4x per hour)"),
                 ])
