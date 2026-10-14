@@ -186,6 +186,8 @@ async def async_migrate_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 new_options["cycles_per_hour"] = 2
 
             if entry.data.get("heating_system") == "radiators":
+                new_options["cycles_per_hour"] = 1
+                new_options["cycles_per_hour"] = 2
                 new_options["cycles_per_hour"] = 3
 
         if entry.version < 10:
